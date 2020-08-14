@@ -159,17 +159,8 @@
     <div class="card"><div class="front"></div><div class="back"></div></div>
     <div id="wall"></div>
    </div>
-  <!--<div id="tiktok"><div id="counter"></div></div>-->
   <div class="mask">
-    <!--
-  <div class="intro">
-    遊戲方式：
-      1.您有三次翻牌機會
-      2.任兩張相同圖式可獲得安慰獎
-      3.三張圖式皆相同可獲得該獎項
-    <button onclick="startGame()">開始遊戲</button>
-  </div>
-  -->
+
   <div class="intro">
       姓名：<input type="text" class="typing" id="uName"/>
       分行：<select class="typing" id="uComp">
@@ -196,12 +187,8 @@
   let shows = new Array();  //存放被翻牌的元素物件
   let cardData = [1, 2, 3, 4]; //原始牌組
   let gameData = new Array(16);   //用來存放要放在遊戲中的牌組內容，八種樣式，十六個元素
-  let counterWidth = 100;  //計時條長度
-  let timer = 60000        //倒數時間(亳秒)
-  let counterHandle      //計時條
   let complete = new Set();
   let repeat = new Set();
-  //startGame()
 
   function checkInfo(){
     const name = $('#uName').val();
@@ -258,7 +245,6 @@
         }
       }
     }
-    //counterHandle=setInterval(timeCounter,125)    //啟動計時器
   }
 
   //初始化相關資料函式
@@ -273,7 +259,6 @@
     timer = 60000;
     complete = new Set();
     repeat = new Set();
-    //document.getElementById('counter').style.width="100%";
 
     //將卡牌元素中的style屬性都先移除
     for (i = 0; i < cards.length; i++) {
@@ -283,18 +268,6 @@
     }
   }
 
-  //計時條倒數函式
-  function timeCounter() {
-    if (timer < 0) {
-      document.getElementById('counter').style.width = "0%";
-      clearInterval(counterHandle);
-      result();  //計時結束時執行結果判定函式
-    } else {
-      timer -= 125;
-      counterWidth -= 0.21
-      document.getElementById('counter').style.width = counterWidth + "%";
-    }
-  }
 
   //結果判定函式
   function result() {
