@@ -28,18 +28,19 @@
     <div class="card"><div class="front"></div><div class="back"></div></div>
     <div class="card"><div class="front"></div><div class="back"></div></div>
     <div id="wall"></div>
-   </div>
+  </div>
+  
   <div class="mask">
 
-  <div class="intro">
-      姓名：<input type="text" class="typing" id="uName"/>
+    <div class="intro">
+      姓名：<input type="text" class="typing" id="uName" />
       分行：<select class="typing" id="uComp">
         <option>一銀中壢</option>
         <option>一銀台北</option>
         <option>兆豐北高雄</option>
       </select>
-    <button onclick="checkInfo()">登入GOGO</button>
-  </div>
+      <button onclick="send()">登入GOGO</button>
+    </div>
   </div>
 </body>
 
@@ -60,12 +61,12 @@
   let complete = new Set();
   let repeat = new Set();
 
-  function checkInfo(){
+  function checkInfo() {
     const name = $('#uName').val();
-    if(name === ""){
+    if (name === "") {
       alert("請輸入使用者姓名");
     }
-    else{
+    else {
       startGame();
     }
   }
@@ -214,4 +215,22 @@
     }
     return array;
   }
+
+  function send() {
+    let name = document.querySelector('#uName').value;
+    let branch = document.querySelector('#uComp').value;
+
+    $.ajax({
+      url: "https://script.google.com/macros/s/AKfycbwmzrtbCqpAOKyKJFvsrKij-hEN329viBUbXPaDXFCVf4wlUiU/exec",
+      data: {
+        "name": name,
+        "branch": branch,
+      },
+      success: function (response) {
+        if (response == "成功") {
+          alert("成功");
+        }
+      },
+    });
+  };
 </script>
