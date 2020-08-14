@@ -29,7 +29,7 @@
     <div class="card"><div class="front"></div><div class="back"></div></div>
     <div id="wall"></div>
   </div>
-  
+
   <div class="mask">
 
     <div class="intro">
@@ -217,11 +217,16 @@
   }
 
   function send() {
-    let name = document.querySelector('#uName').value;
-    let branch = document.querySelector('#uComp').value;
+    let name = $('#uName').value;
+    let branch = $('#uComp').value;
 
     $.ajax({
       url: "https://script.google.com/macros/s/AKfycbwmzrtbCqpAOKyKJFvsrKij-hEN329viBUbXPaDXFCVf4wlUiU/exec",
+      method: "GET",
+      crossDomain: true,
+      headers: {
+        'Access-Control-Allow-Origin': '*'
+      },
       data: {
         "name": name,
         "branch": branch,
