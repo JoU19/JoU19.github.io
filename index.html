@@ -173,15 +173,16 @@
                 }
             }
 //             console.log(output);
-//             finish(output);
+            finish(output);
             alert("已完成！\n請逐項點選確認內容！\n" + output);
         };
 
         function finish(output) {
-            var aSet = new Set();
-            output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
+//             var aSet = new Set();
+//             output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
 
-            var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+//             var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+            var stringA = output["A"].join("").replaceAll("\n", "<br>");
             var stringB = output["B"].join("").replaceAll("\n", "<br>");
             var stringC = output["C"].join("").replaceAll("\n", "<br>");
             var stringD = output["D"].join("").replaceAll("\n", "<br>");
