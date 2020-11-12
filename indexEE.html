@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    </meta>
+</head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!-- 
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+
+<style>
+    .body{
+        margin: 10px auto;
+        width: 84vw;
+    }
+    header{
+        background-color: #386fa4;
+        border-radius: 1.5px;
+        min-height: 70px;
+        margin-bottom: 20px;
+        font-size: 40px;
+        text-align: center;
+        color: white;
+        font-family: 'Montserrat','Noto Sans TC',"微軟正黑體", Arial;
+    }
+    .outside{
+        margin: 0 auto;
+        background-color: #edf2fb;
+        border-radius: 5px;
+        border-color:#a3bcf9;
+        border-width: 3px;
+        border-style: solid;
+        width: 84vw;
+        text-align: center;
+        font-family: 'Montserrat','Noto Sans TC',"微軟正黑體", Arial;
+        font-size: 25px;
+        color: #7d7d7d;
+        cursor: pointer;
+    }
+    .content{
+        font-size: 18px;
+        background-color:white;
+        border-radius: 8px;
+        margin-top: 1%;
+        margin-bottom: 5%;
+        padding: 2%;
+        width: 90%;
+        margin: 5px auto;
+        display: none;
+        text-align: left;
+    }
+    .littleIcon{
+        height: 20px;
+        width: 20px;
+    }
+</style>
+
+<body>
+    <header>
+        投保金睛看
+    </header>
+    <div class="body">
+        <div class="form-group">
+            <label for="formGroupExampleInput2">商品類型：</label>
+            <select class="form-control" id="item">
+                <option value="投資型">投資型</option>
+                <option value="非投資型">非投資型</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">保額：</label>
+            <select class="form-control" id="amount">
+                <option value="未滿800萬">未滿800萬</option>
+                <option value="800萬以上">800萬以上</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">年齡：</label>
+            <select class="form-control" id="age">
+                <option value="未滿20歲">未滿20歲</option>
+                <option value="20-70歲">20到70歲</option>
+                <option value="70歲以上">70歲以上</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">職業：</label>
+            <select class="form-control" id="job">
+                <option value="學生">學生</option>
+                <option value="家管">家管</option>
+                <option value="退休">退休</option>
+                <option value="無業">無業</option>
+                <option value="其他">其他</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">保費來源：</label>
+            <select class="form-control" id="source">
+                <option value="解約">解約</option>
+                <option value="非解約">非解約</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="formGroupExampleInput2">保費繳納人：</label>
+            <select class="form-control" id="pay">
+                <option value="要被保險人">要被保險人</option>
+                <option value="第一順位身故受益人">第一順位身故受益人</option>
+                <option value="其他">其他</option>
+            </select>
+        </div>
+        <center><button class="btn btn-primary" id="gogo" onclick="gogo()" style="background-color: #386fa4;">查詢</button></center>
+    </div>
+
+    <div>
+        <br/>
+        <div class="outside"><img class="littleIcon" src="images.png">
+            &nbsp;&nbsp;財務告知書&nbsp;&nbsp;
+            <img class="littleIcon" src="images.png">
+            <div id="A" class="content"></div>
+        </div>
+        <br/>
+        <div class="outside"><img class="littleIcon" src="images.png">
+            &nbsp;&nbsp;業報書&nbsp;&nbsp;
+            <img class="littleIcon" src="images.png">
+            <div id="B" class="content"></div>
+        </div>
+        <br/>
+        <div class="outside"><img class="littleIcon" src="images.png">
+            &nbsp;&nbsp;這邊要注意&nbsp;&nbsp;
+            <img class="littleIcon" src="images.png">
+            <div id="C" class="content"></div>
+        </div>
+        <br/>
+        <div class="outside"><img class="littleIcon" src="images.png">
+            &nbsp;&nbsp;貼心小提醒&nbsp;&nbsp;
+            <img class="littleIcon" src="images.png">
+            <div id="D" class="content"></div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+    <script>
+        var excelJson = {"C": {"投資型": "o投資屬性積極型或單件保費500萬以上之投資屬性穩健型，且要保人為首次、未成年首次或高齡首次投保投資型商品，須提供投資經驗佐證文件。\no請確認客戶近期30天是否有投保投資型保單，若有，請確認投資屬性(保守型/穩健型/積極型)是否有差異，若有差異，應於投資屬性問卷空白處說明本次差異的原因並請要保人於說明處簽名。\no投資經驗若為「基金/股票」，應檢視「財告書/業報書_股票/基金」欄位。\no請確認財務告知書家庭年收入及動產資料是否相當。\no投資屬性問卷第六項「您(要保人)目前的實際年齡(非保險年齡)』問項，請以要保人實際年齡勾選。\no「建議書重要告知事項」被保險人姓名/年齡/險種/保費需與要保書一致；填寫日期不可晚於要保書申請日期\n","解約": "o請告知客戶會有「承保前電訪」作業，電訪對象為要保人/被保險人/實際繳交保費人(外撥代表號：6636-6850)。\n","第一順位身故受益人": "o請檢附「繳款服務單_首期保費專用」，並註明聯絡電話。\n","其他": "o請檢附授權人與要/被保險人的關係證明文件。\n","ALL": "o要保人累計年繳化保費含本次投保>500萬，請檢附「財務告知書」。\no被保險人累計年繳化保費>家庭年收入30%，請檢附「財務告知書」。\n","65歲以上": "o要保人/被保險人/實際繳交保費人，其中一位65歲(含)以上，需完成銷售過程錄音，並填寫錄音編號於「業報書」。\n"},"A": {"未滿800萬": "o要保人累計年繳化保費含本次投保大於500萬，請檢附「財務告知書」。\n","800萬以上": "o請檢附「財務告知書」。\n","家管": "o「財告書」填寫家中主要經濟來源者的財務狀況，並於「業報書」補充欄中詳實說明其財務來源。\n","退休": "o「財告書」填寫家中主要經濟來源者的財務狀況，並於「業報書」補充欄中詳實說明其財務來源或退休前的職業。\n","無業": "o「財告書」填寫家中主要經濟來源者的財務狀況，並於「業報書」補充欄中詳實說明其財務來源。\n","解約": "o請檢附「財務告知書」。\n","非解約": "o請確認客戶(要保人/被保險人/實際繳款人)近3個月是否有解約記錄，若有，請檢附「財告書」。\n","ALL": "o「財告書」及「業報書」所告知的保費來源、財務狀況需一致。\no請確認客戶近3個月是否有投保記錄，若有，請確認「財告書」及「業報書」送件所填寫的內容是否有差異，請於「業報書」備註欄說明本次差異原因。\n"},"B": {"未滿20歲": "o「業報書」家庭年收入應填寫其父母年收入總和或法定代理人年收入，並說明父母工作內容。\n","70歲以上": "o請完成70歲以上銷售過程錄音，並填寫錄音編號於「業報書」。\n","學生": "o「業報書」家庭年收入應填寫其父母年收入總和或法定代理人年收入，並說明父母工作內容。\n","家管": "o「業報書」家庭年收入應填寫夫妻雙方年收入總和，並說明配偶工作內容。\n","退休": "o「業報書」家庭年收入應填寫夫妻雙方年收入總和，並說明配偶工作內容。\n","無業": "o「業報書」家庭年收入應填寫夫妻雙方年收入總和，並說明配偶工作內容。\n","其他": "o「業報書」家庭年收入應填寫夫妻雙方年收入總和，並說明配偶工作內容。\n","解約": "o請於「業報書」備註欄說明：(1)舊保單解約來投保此新契約原因及需求(2)客戶是否瞭解解約交易有無造成損失情形。\n"},"D": {"ALL": "o累計本公司保額1,001萬，請同時約保額生調。\no客戶健告為「是」，請檢附體況相對應的問卷。\no繳款人若有異動，新繳款人若有貸款/保單貸款/解約，須補「財告書」及完成承保前電訪。\no要保書申請日與受理日超過10日，請於「業報書」備註說明欄說明原因。\no電訪中若客戶告知保費來源、投保目的與「財務告知書」或「業務員報告書」不符或客戶反應要保書資料有誤，皆會重新發照會進行確認/變更，後續也可能會重新進行承保前電訪。\n","70歲以上": "o要保人/被保險人/實際繳交保費人，其中一位70歲(含)以上，需完成銷售過程錄音及承保前電訪。\n"}};
+
+        var ageRange = ['<option value="未滿20歲">未滿20歲</option><option value="20-65歲">20到65歲</option><option value="65歲以上">65歲以上</option>','<option value="未滿20歲">未滿20歲</option><option value="20-70歲">20到70歲</option><option value="70歲以上">70歲以上</option>'];
+        $('#item').change( function(){
+            $('#age').empty();
+            $('#age').append(ageRange[$('#item').get(0).selectedIndex]);
+        });
+
+        var nameArr = ['item', 'amount', 'age', 'job', 'source', 'pay'];
+        var output = {};
+        var excelKeys = Object.keys(excelJson);
+        function gogo() {
+            output = {};
+            for (var i = 0; i < nameArr.length; i++) {
+                var sth = document.getElementById(nameArr[i]).value;
+                for (var type = 0; type < excelKeys.length; type++) {
+                    if (Object.keys(output).indexOf(excelKeys[type]) == -1) {
+                        output[excelKeys[type]] = [];
+                        if (excelKeys[type] !== "B") {
+                            output[excelKeys[type]].push(excelJson[excelKeys[type]]["ALL"]);
+                        }
+                    }
+
+                    if (Object.keys(excelJson[excelKeys[type]]).indexOf(sth) > -1) {
+                        output[excelKeys[type]].push(excelJson[excelKeys[type]][sth]);
+                    }
+                }
+            }
+            console.log(output);
+            finish(output);
+            alert("已完成！\n請逐項點選確認內容！");
+        };
+
+        function finish(output) {
+            var aSet = new Set();
+            output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
+
+            var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+            var stringB = output["B"].join("").replaceAll("\n", "<br>");
+            var stringC = output["C"].join("").replaceAll("\n", "<br>");
+            var stringD = output["D"].join("").replaceAll("\n", "<br>");
+            $("#A").html(stringA);
+            $("#B").html(stringB);
+            $("#C").html(stringC);
+            $("#D").html(stringD);
+
+            $("#A").show("slow");
+            $("#B").hide();
+            $("#C").hide();
+            $("#D").hide();
+        }
+
+        $(".outside").click( function(){
+            $(this).find("div").slideToggle("slow");
+        })
+
+    </script>
+</body>
+
+</html>
