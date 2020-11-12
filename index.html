@@ -162,24 +162,24 @@
         var output = {};
         var excelKeys = Object.keys(excelJson);
         function gogo() {
-            output = {};
-            for (var i = 0; i < nameArr.length; i++) {
-                var sth = document.getElementById(nameArr[i]).value;
-                for (var type = 0; type < excelKeys.length; type++) {
-                    if (Object.keys(output).indexOf(excelKeys[type]) == -1) {
-                        output[excelKeys[type]] = [];
-                        if (excelKeys[type] !== "B") {
-                            output[excelKeys[type]].push(excelJson[excelKeys[type]]["ALL"]);
-                        }
-                    }
+//             output = {};
+//             for (var i = 0; i < nameArr.length; i++) {
+//                 var sth = document.getElementById(nameArr[i]).value;
+//                 for (var type = 0; type < excelKeys.length; type++) {
+//                     if (Object.keys(output).indexOf(excelKeys[type]) == -1) {
+//                         output[excelKeys[type]] = [];
+//                         if (excelKeys[type] !== "B") {
+//                             output[excelKeys[type]].push(excelJson[excelKeys[type]]["ALL"]);
+//                         }
+//                     }
 
-                    if (Object.keys(excelJson[excelKeys[type]]).indexOf(sth) > -1) {
-                        output[excelKeys[type]].push(excelJson[excelKeys[type]][sth]);
-                    }
-                }
-            }
-            console.log(output);
-            finish(output);
+//                     if (Object.keys(excelJson[excelKeys[type]]).indexOf(sth) > -1) {
+//                         output[excelKeys[type]].push(excelJson[excelKeys[type]][sth]);
+//                     }
+//                 }
+//             }
+//             console.log(output);
+//             finish(output);
             alert("已完成！\n請逐項點選確認內容！");
         };
 
