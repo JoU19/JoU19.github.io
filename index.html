@@ -180,14 +180,13 @@
         function finish(output) {
             alert(JSON.stringify(output));
             var aSet = new Set();
-            alert(aSet.values());
             output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
             alert('去除A的重複值');
             
             alert(JSON.stringify(aSet));
             
-            var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
-            alert(stringA);
+//             var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+//             alert(stringA);
             var stringB = output["B"].join("").replaceAll("\n", "<br>");
             alert(stringB);
             var stringC = output["C"].join("").replaceAll("\n", "<br>");
