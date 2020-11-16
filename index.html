@@ -185,19 +185,22 @@
             
             alert(JSON.stringify(aSet));
             
-            var stringA = Array.from(aSet).join("").replaceAll("\n", "111");
+//             var stringA = Array.from(aSet).join("");
 //             alert(stringA);
             
 
 //             alert(output['B'].join("").replaceAll("\n", "<br>"));
             
-            var stringB = output['B'].join("");
-            var stringC = output['C'].join("");
-            var stringD = output['D'].join("");
-            $("#A").html(stringA);
-            $("#B").html(stringB);
-            $("#C").html(stringC);
-            $("#D").html(stringD);
+//             var stringB = output['B'].join("");
+//             var stringC = output['C'].join("");
+//             var stringD = output['D'].join("");
+            
+            output['B'].forEach(item => $('#B').append(item));
+            
+//             $("#A").html(stringA);
+//             $("#B").html(stringB);
+//             $("#C").html(stringC);
+//             $("#D").html(stringD);
 
             $("#A").show("slow");
             $("#B").hide();
