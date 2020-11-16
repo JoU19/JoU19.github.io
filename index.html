@@ -178,13 +178,16 @@
         };
 
         function finish(output) {
+            alert(output);
             alert('start finish function');
-//             var aSet = new Set();
-//             output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
-//             alert('去除A的重複值');
+            var aSet = new Set();
+            output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
+            alert('去除A的重複值');
             
-//             var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
-//             alert('把A從SET變成Array');
+            alert(aSet);
+            
+            var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+            alert('把A從SET變成Array');
             var stringA = output["A"].join("").replaceAll("\n", "<br>");
             var stringB = output["B"].join("").replaceAll("\n", "<br>");
             var stringC = output["C"].join("").replaceAll("\n", "<br>");
