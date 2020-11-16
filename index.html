@@ -185,30 +185,24 @@
             
             alert(JSON.stringify(aSet));
             
-//             var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
+            var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
 //             alert(stringA);
             
-            alert(output['B']);
-            alert(output["B"]);
-            alert(output['B'].join(""));
+
 //             alert(output['B'].join("").replaceAll("\n", "<br>"));
             
-            var stringB = output['B'].join("").replaceAll("\\n", "<br>");
-//             alert(stringB);
+            var stringB = output['B'].join("");
             var stringC = output['C'].join("");
-//             alert(stringC);
-//             var stringD = output['D'].join("").replaceAll("\n", "<br>");
-//             alert('ABCD各取所需');
-//             alert('done');
-//             $("#A").html(stringA);
+            var stringD = output['D'].join("");
+            $("#A").html(stringA);
             $("#B").html(stringB);
             $("#C").html(stringC);
-//             $("#D").html(stringD);
+            $("#D").html(stringD);
 
-//             $("#A").show("slow");
-//             $("#B").hide();
-//             $("#C").hide();
-//             $("#D").hide();
+            $("#A").show("slow");
+            $("#B").hide();
+            $("#C").hide();
+            $("#D").hide();
         }
 
         $(".outside").click( function(){
