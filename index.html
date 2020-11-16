@@ -185,13 +185,16 @@
             output["A"].forEach(item => aSet.add(item)); //為了重複出現的提醒
             alert('去除A的重複值');
             
-            alert(aSet.values());
+            alert(JSON.stringify(aSet));
             
             var stringA = Array.from(aSet).join("").replaceAll("\n", "<br>");
-            alert('把A從SET變成Array');
+            alert(stringA);
             var stringA = output["A"].join("").replaceAll("\n", "<br>");
+            alert(stringA);
             var stringB = output["B"].join("").replaceAll("\n", "<br>");
+            alert(stringB);
             var stringC = output["C"].join("").replaceAll("\n", "<br>");
+            alert(stringC);
             var stringD = output["D"].join("").replaceAll("\n", "<br>");
             alert('ABCD各取所需');
             alert('done');
