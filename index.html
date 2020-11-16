@@ -195,7 +195,10 @@
 //             var stringC = output['C'].join("");
 //             var stringD = output['D'].join("");
             
+            aSet.forEach(item => $('#A').append(item, "<br>"));
             output['B'].forEach(item => $('#B').append(item, "<br>"));
+            output['B'].forEach(item => $('#C').append(item, "<br>"));
+            output['B'].forEach(item => $('#D').append(item, "<br>"));
             
 //             $("#A").html(stringA);
 //             $("#B").html(stringB);
